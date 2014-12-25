@@ -1,8 +1,7 @@
 #include "tcpserver.h"
 #include <string>
-#include <errno.h>
-#include <unistd.h>
 #include <assert.h>
+#include <unistd.h>
 
 
 CTcpServer::CTcpServer()
