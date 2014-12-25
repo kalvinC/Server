@@ -1,10 +1,7 @@
 #ifndef TCPSERVER_H
 #define TCPSERVER_H
 
-#include <arpa/inet.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <netinet/in.h>
+#include "sockconfig.h"
 
 class CTcpServer
 {
