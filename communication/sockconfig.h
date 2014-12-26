@@ -8,4 +8,9 @@
 
 #include <errno.h>
 
+
+//define kqueue
+#include <sys/event.h>
+#include <sys/time.h>
+
 #endif
