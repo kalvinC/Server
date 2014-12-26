@@ -18,6 +18,16 @@ CTcpServer::CTcpServer(unsigned short port)
 	this->server_socket = socket(AF_INET, SOCK_STREAM, 0);
 }
 
+bool CTcpServer::SetNonBlocking()
+{
+	int rt = fcntl(server_socket,F_SETFD,O_NONBLOCK);
+	if(rt != -1)
+		return true;
+
+	printf("%s\n", strerror(errno));
+	return false;
+}
+
 CTcpServer::~CTcpServer()
 {
 	if(server_socket > 0)
