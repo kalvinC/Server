@@ -4,13 +4,16 @@
 int main(int argc, char const *argv[])
 {
 	CTcpServer * tcpserver = new CTcpServer();
+	if(tcpserver->SetNonBlocking())
+		printf("%s\n", "true" );
+	else
+		return 1;
 	if(tcpserver->Bind())
 	{
-		printf("%s\n", "1");
 		if(tcpserver->Listen())
 		{
 			int client_socket;
-			if(tcpserver->Aceept(client_socket))
+			while(tcpserver->Aceept(client_socket))
 			{
 				char buffer[1024];
 				if(tcpserver->RecvData(client_socket,buffer,1024))
