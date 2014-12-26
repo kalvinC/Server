@@ -11,6 +11,8 @@ public:
 	~CTcpServer();
 
 public:
+	bool SetNonBlocking();
+	
 	bool Bind();
 	bool Listen();
 	bool Aceept(int & client_socket, struct sockaddr &client_socket_addr);
