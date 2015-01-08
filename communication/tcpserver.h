@@ -12,6 +12,10 @@ public:
 
 public:
 	/**
+	*@return server_socket
+	*/
+	int GetServerSocket();
+	/**
 	@return if set success, true, else false.
 	*/
 	bool SetNonBlocking();

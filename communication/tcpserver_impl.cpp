@@ -18,6 +18,17 @@ CTcpServer::CTcpServer(unsigned short port)
 	this->server_socket = socket(AF_INET, SOCK_STREAM, 0);
 }
 
+CTcpServer::~CTcpServer()
+{
+	if(server_socket > 0)
+		close(server_socket);
+}
+
+int CTcpServer::GetServerSocket()
+{
+	return server_socket;
+}
+
 bool CTcpServer::SetNonBlocking()
 {
 	int rt = fcntl(server_socket,F_SETFD,O_NONBLOCK);
@@ -28,11 +39,7 @@ bool CTcpServer::SetNonBlocking()
 	return false;
 }
 
-CTcpServer::~CTcpServer()
-{
-	if(server_socket > 0)
-		close(server_socket);
-}
+
 
 bool CTcpServer::Bind()
 {
