@@ -67,8 +67,5 @@ private:
 	unsigned short port;
 	int server_socket;
 
-
-
-
 };
 #endif 
