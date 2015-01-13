@@ -13,4 +13,6 @@
 #include <sys/event.h>
 #include <sys/time.h>
 
+#include <fcntl.h>
+
 #endif
