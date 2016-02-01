@@ -2,6 +2,7 @@
 #define __DBCLIENT_H_
 
 #include <stdio.h>
+#include <string>
 
 class DBClient
 {
@@ -10,7 +11,7 @@ public:
  	* Connect function
  	* help you connect to database, you should set ip, user, password.
  	* */ 	
-	virtual bool Connect(char * ip, char * user = NULL, char * password = NULL) = 0;
+	virtual bool Connect(char * ip, unsigned short port, char * user = NULL, char * password = NULL, char * db = NULL) = 0;
         /**
   	* Disconnect to database.
   	* 
