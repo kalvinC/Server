@@ -25,7 +25,8 @@ private:
 	unsigned short port;
 
 	MYSQL * mysqlhandle;
-	
+
+public:	
 	std::vector<std::string> col_name_vector;
         std::map<int, std::vector<std::string> > row_val_map;
 };

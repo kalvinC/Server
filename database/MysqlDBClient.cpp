@@ -15,7 +15,6 @@ MysqlDBClient::~MysqlDBClient()
 
 bool MysqlDBClient::Connect(char * ip, unsigned short port, char * user = NULL, char * password = NULL, char * db = NULL) 
 {
-	assert(ip == NULL);
 	this->ip = ip;
 	this->port = port;
 	this->user = user;
